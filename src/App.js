@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import User from "./Components/User";
+import Welcome from './Components/Welcome';
+import Content from './Components/Content';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+
+  const [name, setName] = useState("");
+
+  const fun=(value)=> {
+    setName(value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Router>
+
+        <Routes>
+          <Route exact path="/" element={<User fun={fun} />} />
+          <Route exact path="/User" element={<User fun={fun} />} />
+          <Route exact path="/Content" element={<Content />} />
+          <Route path="/Welcome" element={<Welcome name={name} />} />
+        </Routes>
+
+      </Router>
+
     </div>
   );
 }
