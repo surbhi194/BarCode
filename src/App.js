@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import User from "./Components/User";
 import Welcome from './Components/Welcome';
-import Content from './Components/Content';
+import Add from './Components/Add';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<User fun={fun} />} />
           <Route exact path="/User" element={<User fun={fun} />} />
-          <Route exact path="/Content" element={<Content />} />
+          <Route exact path="/Add" element={<Add />} />
           <Route path="/Welcome" element={<Welcome name={name} />} />
         </Routes>
 

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 import Content from './Content';
+import Add from './Add';
 
 function Welcome(props) {
 
@@ -19,7 +20,7 @@ function Welcome(props) {
       <div className="More1">
         <button className="More">
           <b>
-            <Link to="/Content">My_list</Link>
+            <Link to="/Add">My_list</Link>
           </b>
         </button>
       </div>
